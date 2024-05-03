@@ -3,6 +3,7 @@ import express from 'express';
 import { Request, Response } from 'express';
 import cors from 'cors';
 import "reflect-metadata";
+import dataBaseService from './services/database-service';
 
 const port = 3000;
 const app = express();
@@ -11,6 +12,13 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors()); 
+
+dataBaseService.initialize().then(() => {
+    console.log("Database initialized");
+}).catch(err => {
+    console.log("Error initializing database", err);
+});
+
 
 app.get('/', (req: Request, res: Response) => {
     res.send('Hello World!');
