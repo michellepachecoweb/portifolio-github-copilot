@@ -1,9 +1,10 @@
 // create a REST API server with express
+import "reflect-metadata";
 import express from 'express';
 import { Request, Response } from 'express';
 import cors from 'cors';
-import "reflect-metadata";
 import dataBaseService from './services/database-service';
+import userRouter from './routes/user';
 
 const port = 3000;
 const app = express();
@@ -19,10 +20,11 @@ dataBaseService.initialize().then(() => {
     console.log("Error initializing database", err);
 });
 
-
 app.get('/', (req: Request, res: Response) => {
     res.send('Hello World!');
 });
+
+app.use('/user', userRouter);
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`);
