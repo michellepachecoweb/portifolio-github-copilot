@@ -1,7 +1,7 @@
 {
     "cli": {
-        "entitiesDir": "src/entity",
-        "migrationsDir": "src/infrastructure/migration",
-        "subscribersDir": "src/infrastructure/subscriber"
+        "entitiesDir": "src/entities",
+        "migrationsDir": "src/infrastructure/migrations",
+        "subscribersDir": "src/infrastructure/subscribers"
     }
 }

@@ -6,19 +6,14 @@ import { DataSource } from "typeorm";
         "synchronize": true,
         "logging": false,
         "entities": [
-            "src/entity/**/*.ts"
+            "src/entities/**/*.ts"
         ],
         "migrations": [
-            "src/infrastructure/migration/**/*.ts"
+            "src/infrastructure/migrations/**/*.ts"
         ],
         "subscribers": [
-            "src/infrastructure/subscriber/**/*.ts"
+            "src/infrastructure/subscribers/**/*.ts"
         ]
-        // "cli": {
-        //     "entitiesDir": "src/entity",
-        //     "migrationsDir": "src/infrastructure/migration",
-        //     "subscribersDir": "src/subscriber"
-        // }
 });
 
 export default dataBaseService;
